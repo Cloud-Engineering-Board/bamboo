@@ -42,9 +42,9 @@ public class UserServiceImpl implements UserService {
     private String bucket;
 
     @Override
-    public TokenDTO googleLogin(String accessCode) throws CustomException {
+    public TokenDTO googleLogin(String accessCode, String redirect) throws CustomException {
         log.info("[googleLogin] googleLogin start");
-        String googleAccessToken = oauthService.getAccessTokenFromGoogle(accessCode);
+        String googleAccessToken = oauthService.getAccessTokenFromGoogle(accessCode, redirect);
         UserCheckDTO userCheckDTO = oauthService.getUserInfoFromGoogle(googleAccessToken);
         log.info("[googleLogin] googleLogin done");
         return oauthService.loginResult(userCheckDTO);

@@ -43,7 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity webSecurity){
-        webSecurity.ignoring().antMatchers("/user/google", "/user/duplicate","/user/token","/swagger-ui/*")
+        webSecurity.ignoring().antMatchers("/user/google", "/user/duplicate","/user/token","/swagger-ui/*", "/test")
                 .and()
                 .ignoring().antMatchers(HttpMethod.POST,"/user");
     }

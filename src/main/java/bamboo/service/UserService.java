@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 public interface UserService {
-    TokenDTO googleLogin(String accessCode) throws CustomException;
+    TokenDTO googleLogin(String accessCode, String redirect) throws CustomException;
 
     Boolean dupCheck(String name);
 

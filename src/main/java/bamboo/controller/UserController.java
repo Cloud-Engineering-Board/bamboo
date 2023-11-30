@@ -33,9 +33,9 @@ public class UserController {
 
     @GetMapping("/google")
     @ApiOperation(value = "google api 호출")
-    public ResponseEntity<?> googleOauth(@RequestParam("code") String accessCode) throws CustomException {
+    public ResponseEntity<?> googleOauth(@RequestParam("code") String accessCode, @RequestParam("redirect") String redirect) throws CustomException {
         log.info("[googleOauth] googleOauth start");
-        TokenDTO token = userService.googleLogin(accessCode);
+        TokenDTO token = userService.googleLogin(accessCode, redirect);
         log.info("[googleOauth] googleOauth done");
         return new ResponseEntity<>(token,HttpStatus.OK);
     }

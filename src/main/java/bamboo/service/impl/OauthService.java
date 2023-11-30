@@ -35,10 +35,8 @@ public class OauthService {
     String clientId;
     @Value("${clientSecret}")
     String clientSecret;
-    @Value("${redirect}")
-    String redirect;
 
-    public String getAccessTokenFromGoogle(String accessCode){
+    public String getAccessTokenFromGoogle(String accessCode, String redirect){
         log.info("[getAccessTokenFromGoogle] getAccessTokenFromGoogle start");
 
         RestTemplate restTemplate = new RestTemplate();
