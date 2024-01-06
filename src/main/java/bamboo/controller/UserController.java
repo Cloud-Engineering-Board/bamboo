@@ -101,6 +101,12 @@ public class UserController {
         return new ResponseEntity<>(newAccessToken,HttpStatus.OK);
     }
 
+    @GetMapping("/test")
+    @ApiOperation(value = "토큰 재발급")
+    public ResponseEntity<?> test(){
+        return new ResponseEntity<>("너무귀찮구요",HttpStatus.OK);
+    }
+    
     @ExceptionHandler
     public ResponseEntity<?> Exception(CustomException e){
         log.info("[Exception] CustomException error");
